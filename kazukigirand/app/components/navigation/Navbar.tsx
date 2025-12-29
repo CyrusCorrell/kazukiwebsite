@@ -3,15 +3,16 @@
 import { useState } from 'react';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
+import { Home, Sigma, Flame, Circle, Palette, Youtube, Languages } from 'lucide-react';
 
 const navItems = [
-    { href: '/', label: 'Home', icon: '◈' },
-    { href: '/proofs', label: 'Proofs', icon: '∑' },
-    { href: '/hyperfixations', label: 'Hyperfixations', icon: '🔥' },
-    { href: '/venn', label: 'Venn', icon: '◯' },
-    { href: '/art', label: 'Art', icon: '🎨' },
-    { href: '/youtube', label: 'YouTube', icon: '▶' },
-    { href: '/japanese', label: '日本語', icon: '鳥' },
+    { href: '/', label: 'Home', icon: <Home size={18} /> },
+    { href: '/proofs', label: 'Proofs', icon: <Sigma size={18} /> },
+    { href: '/hyperfixations', label: 'Hyperfixations', icon: <Flame size={18} /> },
+    { href: '/venn', label: 'Venn', icon: <Circle size={18} /> },
+    { href: '/art', label: 'Art', icon: <Palette size={18} /> },
+    { href: '/youtube', label: 'YouTube', icon: <Youtube size={18} /> },
+    { href: '/japanese', label: '日本語', icon: <Languages size={18} /> },
 ];
 
 export default function Navbar() {
@@ -39,7 +40,7 @@ export default function Navbar() {
                     <div
                         className="w-10 h-10 rounded-xl flex items-center justify-center transition-all duration-300 group-hover:scale-110"
                         style={{
-                            background: 'linear-gradient(135deg, var(--japanese-primary) 0%, var(--art-primary) 50%, var(--math-primary) 100%)',
+                            background: 'var(--art-primary)',
                         }}
                     >
                         <span className="text-white font-bold text-lg">K</span>

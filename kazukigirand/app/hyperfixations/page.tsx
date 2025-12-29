@@ -4,6 +4,7 @@ import { Card, CardHeader, CardTitle, CardDescription, CardContent, CardFooter }
 import { Badge, StatusBadge } from '@/app/components/ui/Badge';
 import Footer from '@/app/components/navigation/Footer';
 import Link from 'next/link';
+import { Flame, Pause, CheckCircle } from 'lucide-react';
 
 export const metadata: Metadata = {
     title: 'Hyperfixations | Kazuki Girand',
@@ -21,7 +22,7 @@ export default function HyperfixationsPage() {
                 {/* Header */}
                 <header className="section-header animate-fade-in">
                     <div className="flex items-center justify-center gap-3 mb-4">
-                        <span className="text-4xl">🔥</span>
+                        <Flame size={40} className="text-orange-500" />
                         <h1 className="text-white">Hyperfixations</h1>
                     </div>
                     <p>
@@ -34,7 +35,7 @@ export default function HyperfixationsPage() {
                 {current.length > 0 && (
                     <section className="mb-16">
                         <h2 className="text-2xl font-bold text-white mb-6 flex items-center gap-3 animate-fade-in">
-                            <span className="text-3xl">🔥</span>
+                            <Flame size={32} className="text-orange-500" />
                             Currently Obsessed
                         </h2>
                         <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
@@ -78,7 +79,7 @@ export default function HyperfixationsPage() {
                                                 </div>
                                                 <div className="h-2 bg-[var(--background-tertiary)] rounded-full overflow-hidden">
                                                     <div
-                                                        className="h-full bg-gradient-to-r from-math-primary to-art-primary transition-all duration-500"
+                                                        className="h-full bg-math-primary transition-all duration-500"
                                                         style={{
                                                             width: `${(item.milestones.filter(m => m.completed).length / item.milestones.length) * 100}%`
                                                         }}
@@ -107,7 +108,7 @@ export default function HyperfixationsPage() {
                 {paused.length > 0 && (
                     <section className="mb-16">
                         <h2 className="text-2xl font-bold text-white mb-6 flex items-center gap-3 animate-fade-in">
-                            <span className="text-3xl">⏸️</span>
+                            <Pause size={32} className="text-yellow-500" />
                             On Hold
                         </h2>
                         <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
@@ -156,7 +157,7 @@ export default function HyperfixationsPage() {
                 {past.length > 0 && (
                     <section className="mb-16">
                         <h2 className="text-2xl font-bold text-white mb-6 flex items-center gap-3 animate-fade-in">
-                            <span className="text-3xl">✅</span>
+                            <CheckCircle size={32} className="text-green-500" />
                             Completed Adventures
                         </h2>
                         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">

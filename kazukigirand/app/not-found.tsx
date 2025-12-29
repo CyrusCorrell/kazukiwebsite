@@ -7,13 +7,7 @@ export default function NotFound() {
             <div className="text-center max-w-md animate-fade-in">
                 {/* 404 Display */}
                 <div
-                    className="text-9xl font-bold mb-6"
-                    style={{
-                        background: 'linear-gradient(135deg, var(--japanese-primary) 0%, var(--art-primary) 50%, var(--math-primary) 100%)',
-                        WebkitBackgroundClip: 'text',
-                        WebkitTextFillColor: 'transparent',
-                        backgroundClip: 'text',
-                    }}
+                    className="text-9xl font-bold mb-6 text-white"
                 >
                     404
                 </div>

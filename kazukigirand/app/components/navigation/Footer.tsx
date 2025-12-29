@@ -1,4 +1,5 @@
 import Link from 'next/link';
+import { Github, Twitter, Youtube } from 'lucide-react';
 
 const footerLinks = {
     pages: [
@@ -10,9 +11,9 @@ const footerLinks = {
         { href: '/japanese', label: 'Japanese' },
     ],
     social: [
-        { href: 'https://github.com', label: 'GitHub', icon: '⌘' },
-        { href: 'https://twitter.com', label: 'Twitter', icon: '𝕏' },
-        { href: 'https://youtube.com', label: 'YouTube', icon: '▶' },
+        { href: 'https://github.com', label: 'GitHub', icon: <Github size={20} /> },
+        { href: 'https://twitter.com', label: 'Twitter', icon: <Twitter size={20} /> },
+        { href: 'https://youtube.com', label: 'YouTube', icon: <Youtube size={20} /> },
     ],
 };
 
@@ -27,7 +28,7 @@ export default function Footer() {
                             <div
                                 className="w-10 h-10 rounded-xl flex items-center justify-center"
                                 style={{
-                                    background: 'linear-gradient(135deg, var(--japanese-primary) 0%, var(--art-primary) 50%, var(--math-primary) 100%)',
+                                    background: 'var(--art-primary)',
                                 }}
                             >
                                 <span className="text-white font-bold text-lg">K</span>

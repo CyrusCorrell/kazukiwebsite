@@ -7,6 +7,7 @@ import { artworks, type Artwork } from '@/data/artworks';
 import { Badge } from '@/app/components/ui/Badge';
 import { Button } from '@/app/components/ui/Button';
 import Footer from '@/app/components/navigation/Footer';
+import { Palette, X } from 'lucide-react';
 
 // Get unique categories
 const categories = ['All', ...new Set(artworks.flatMap(a => a.category))];
@@ -25,7 +26,7 @@ export default function ArtPage() {
                 {/* Header */}
                 <header className="section-header animate-fade-in">
                     <div className="flex items-center justify-center gap-3 mb-4">
-                        <span className="text-4xl">🎨</span>
+                        <Palette size={40} className="text-blue-500" />
                         <h1 className="text-white">Art Gallery</h1>
                     </div>
                     <p>
@@ -71,18 +72,16 @@ export default function ArtPage() {
                             }}
                             aria-label={`View ${artwork.title}`}
                         >
-                            {/* Placeholder for image - using gradient as placeholder */}
+                            {/* Placeholder for image - using solid color as placeholder */}
                             <div
                                 className="w-full h-full transition-transform duration-300 group-hover:scale-105"
                                 style={{
-                                    background: `linear-gradient(135deg, 
-                    hsl(${(index * 40) % 360}, 70%, 30%) 0%, 
-                    hsl(${(index * 40 + 60) % 360}, 60%, 20%) 100%)`,
+                                    background: 'var(--background-secondary)',
                                 }}
                             >
                                 {/* Art placeholder with title */}
                                 <div className="w-full h-full flex items-center justify-center">
-                                    <span className="text-4xl opacity-50">🎨</span>
+                                    <Palette size={40} className="text-slate-600" />
                                 </div>
                             </div>
 
@@ -122,12 +121,10 @@ export default function ArtPage() {
                         <div
                             className="aspect-video w-full flex items-center justify-center"
                             style={{
-                                background: `linear-gradient(135deg, 
-                  hsl(${artworks.indexOf(selectedArtwork) * 40 % 360}, 70%, 30%) 0%, 
-                  hsl(${(artworks.indexOf(selectedArtwork) * 40 + 60) % 360}, 60%, 20%) 100%)`,
+                                background: 'var(--background-secondary)',
                             }}
                         >
-                            <span className="text-8xl opacity-50">🎨</span>
+                            <Palette size={80} className="text-slate-600 opacity-50" />
                         </div>
 
                         {/* Details */}
@@ -142,7 +139,7 @@ export default function ArtPage() {
                                     className="p-2 rounded-lg hover:bg-white/10 transition-colors"
                                     aria-label="Close"
                                 >
-                                    <span className="text-2xl">×</span>
+                                    <X size={24} />
                                 </button>
                             </div>
 

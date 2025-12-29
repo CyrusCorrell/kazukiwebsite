@@ -19,6 +19,7 @@ interface VennCircleProps {
 const VennCircle = memo(function VennCircle({
     id,
     label,
+    color,
     cx,
     cy,
     isHovered,
@@ -53,7 +54,7 @@ const VennCircle = memo(function VennCircle({
                 cx={cx}
                 cy={cy}
                 r={radius}
-                fill={`url(#${id}-gradient)`}
+                fill={color}
                 filter={isHovered ? `url(#glow-${id})` : undefined}
                 style={{
                     mixBlendMode: 'screen',

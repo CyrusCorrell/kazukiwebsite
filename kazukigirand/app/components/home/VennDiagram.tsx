@@ -68,16 +68,8 @@ export default function VennDiagram() {
   }, [handleCircleClick]);
 
   return (
-    <div className="relative w-full h-screen flex items-center justify-center overflow-hidden">
-      {/* Animated background gradient */}
-      <div 
-        className="absolute inset-0 animate-gradient"
-        style={{
-          background: 'linear-gradient(135deg, #0f172a 0%, #1a1a2e 25%, #16213e 50%, #1a1a2e 75%, #0f172a 100%)',
-          backgroundSize: '400% 400%',
-        }}
-      />
-      
+    <div className="relative w-full h-screen flex items-center justify-center overflow-hidden bg-slate-900">
+
       {/* Floating particles effect */}
       <div className="absolute inset-0 overflow-hidden pointer-events-none">
         {[...Array(20)].map((_, i) => (
@@ -105,20 +97,6 @@ export default function VennDiagram() {
         aria-label="Interactive Venn diagram showing three areas: Japanese, Art, and Math"
       >
         <defs>
-          {/* Gradient definitions for each circle */}
-          <radialGradient id="japanese-gradient" cx="30%" cy="30%">
-            <stop offset="0%" stopColor="#f87171" stopOpacity="0.8" />
-            <stop offset="100%" stopColor="#ef4444" stopOpacity="0.5" />
-          </radialGradient>
-          <radialGradient id="art-gradient" cx="70%" cy="30%">
-            <stop offset="0%" stopColor="#60a5fa" stopOpacity="0.8" />
-            <stop offset="100%" stopColor="#3b82f6" stopOpacity="0.5" />
-          </radialGradient>
-          <radialGradient id="math-gradient" cx="50%" cy="70%">
-            <stop offset="0%" stopColor="#4ade80" stopOpacity="0.8" />
-            <stop offset="100%" stopColor="#22c55e" stopOpacity="0.5" />
-          </radialGradient>
-
           {/* Glow filters */}
           <filter id="glow-japanese" x="-50%" y="-50%" width="200%" height="200%">
             <feGaussianBlur stdDeviation="15" result="blur" />
@@ -186,7 +164,7 @@ export default function VennDiagram() {
       </svg>
 
       {/* Center name overlay - positioned absolutely */}
-      <div 
+      <div
         className="absolute z-20 flex flex-col items-center justify-center text-center pointer-events-none"
         style={{
           top: '50%',
@@ -194,7 +172,7 @@ export default function VennDiagram() {
           transform: 'translate(-50%, -30%)',
         }}
       >
-        <div 
+        <div
           className="px-8 py-4 rounded-2xl glass"
           style={{
             background: 'rgba(15, 23, 42, 0.8)',
@@ -204,14 +182,8 @@ export default function VennDiagram() {
             boxShadow: '0 8px 32px rgba(0, 0, 0, 0.4)',
           }}
         >
-          <h1 
-            className="text-3xl md:text-4xl lg:text-5xl font-bold tracking-tight"
-            style={{
-              background: 'linear-gradient(135deg, #f1f5f9 0%, #e2e8f0 50%, #f1f5f9 100%)',
-              WebkitBackgroundClip: 'text',
-              WebkitTextFillColor: 'transparent',
-              backgroundClip: 'text',
-            }}
+          <h1
+            className="text-3xl md:text-4xl lg:text-5xl font-bold tracking-tight text-white animate-fade-in"
           >
             Kazuki Girand
           </h1>
@@ -223,7 +195,7 @@ export default function VennDiagram() {
 
       {/* Hover info display */}
       {hoveredCircle && (
-        <div 
+        <div
           className="absolute bottom-8 left-1/2 -translate-x-1/2 z-20 animate-fade-in"
         >
           <div className="glass px-6 py-3 rounded-xl">
@@ -239,20 +211,20 @@ export default function VennDiagram() {
 
       {/* Navigation hints */}
       <nav className="absolute top-8 right-8 z-20 flex gap-4" aria-label="Quick navigation">
-        <a 
-          href="/hyperfixations" 
+        <a
+          href="/hyperfixations"
           className="glass px-4 py-2 rounded-lg text-sm font-medium text-slate-300 hover:text-white transition-colors"
         >
           Hyperfixations
         </a>
-        <a 
-          href="/venn" 
+        <a
+          href="/venn"
           className="glass px-4 py-2 rounded-lg text-sm font-medium text-slate-300 hover:text-white transition-colors"
         >
           Venn
         </a>
-        <a 
-          href="/youtube" 
+        <a
+          href="/youtube"
           className="glass px-4 py-2 rounded-lg text-sm font-medium text-slate-300 hover:text-white transition-colors"
         >
           YouTube
